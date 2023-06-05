@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=sparkifydb
+    volumes:
+      - "/Users/ahmedothman/Desktop/data_engineering_udacity/db:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+  pg_admin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=root@root.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - "8080:80"
+    
